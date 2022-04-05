@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="utf-8">
+  <title>Formulario en Replit</title>
+  <link href="css/reset.css" rel="stylesheet" type="text/css">
+  <link href="css/index.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <main> 
+        <section class="section">
+            <article>
+                <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="imagen-index">
+            </article>
+                
+            <article>
+                <form class ="formulario" action="">
+                    <div>
+                     <p>User:</p>
+                     <input type="text" id="nombre" placeholder="Nombre" value="">
+                    </div>
+                    <div>
+                     <p>Password:</p>
+                     <input type="password" id="pass" placeholder="******" value="">
+                    </div>
+                  <div class="botones">
+                       <button class ="btn btn-primary"type="submit" onclick="sesion()"><a class="boton" href="html/dashboard.html">Sign</a></button> 
+                       <button class ="btn btn-danger" type="submit"><a class="boton" href="html/register.html">Register</a></button> 
+                </div>    
+                </form>
+            </article>
+        </section>
+    </main>
+  <script type="text/javascript" src="js/conexion.js"></script>
+</body>
+
+</html>
