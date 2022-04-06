@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Formulario en Replit</title>
-  <link href="css/reset.css" rel="stylesheet" type="text/css">
+  <link href="../css/reset.css" rel="stylesheet" type="text/css">
   <link href="../css/register.css" rel="stylesheet" type="text/css"/>
 </head>
 
@@ -16,31 +16,33 @@
             </article>
                 
             <article>
-                <form class ="formulario" action="html/dashboard.html" method="post">
+                <form id="formulario" class ="formulario">
                     <div>
                      <p>User:</p>
-                     <input type="text" placeholder="ejemplo123">
+                     <input id="user" type="text" placeholder="ejemplo123">
                     </div>
                     <div>
                      <p>Name:</p>
-                     <input type="text" placeholder="Nombre">
+                     <input id="name" type="text" placeholder="Nombre">
                     </div>
                   <div>
                      <p>Email:</p>
-                     <input type="email" placeholder="email@example.com">
+                     <input id="email" type="email" placeholder="email@example.com">
                     </div>
                     <div>
                      <p>Pass:</p>
-                     <input type="password" placeholder="******">
+                     <input id="pass" type="password" placeholder="******">
                     </div>
                   <div class="botones">
-                       <button class ="btn btn-danger" type="submit"><a class="boton" href="../index.html">Register</a></button> 
+                       <button id="btn-register" class ="btn btn-danger" type="submit">Register</button> 
                     <button class ="btn btn-danger" type="submit"><a class="boton" href="../index.html">Cancelar</a></button>
                 </div>    
                 </form>
             </article>
         </section>
     </main>
+
+    <script src="../js/conexion.js"></script>
 </body>
 
 </html>
