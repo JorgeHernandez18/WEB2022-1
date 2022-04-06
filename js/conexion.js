@@ -32,7 +32,7 @@ document.getElementById("btn-register").addEventListener("click", (e) => {
       var responseJsonObj = JSON.parse(this.responseText);
       //this.responseText es la respuesta de la api
       console.log(responseJsonObj)
-      window.open("../index.html");
+      window.location.href = "../index.html";
     }
   };
 })
