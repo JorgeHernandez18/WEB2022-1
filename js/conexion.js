@@ -2,10 +2,10 @@ const Json = "https://ServidorTest.carlos-reneren7.repl.co/register";
 
 const xhttp = new XMLHttpRequest();
 
-xhttp.onload = function () {
+/* xhttp.onload = function () {
   document.getElementsByClassName("contenido").innerHTML = this.responseText;
 }
-
+ */
 
 document.getElementById("btn-register").addEventListener("click", (e) => {
   e.preventDefault();
@@ -22,47 +22,16 @@ document.getElementById("btn-register").addEventListener("click", (e) => {
     "email": email
   }
 
-  fetch(Json,{
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(usuario)
+  fetch(Json, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(usuario)
+  })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
+  //window.location.href = "../index.html";
+
 })
-.then(res => res.json())
-.then(data => console.log(data))
-.catch(err => console.log(err))
-})
-
-/* document.getElementById("btn-register").addEventListener("click", (e) => {
-  e.preventDefault();
-  
-  let user = document.getElementById("user").value;
-  let name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let pass = document.getElementById("pass").value;
-
-  let usuario = {
-    "user": user,
-    "password": pass,
-    "name": name,
-    "email": email
-  }
-
-  xhttp.onreadystatechange = function () {
-    //ready state indica que el estado cambio, 200 es el valor de una respuesta exitosa
-    if (this.readyState == 4 && this.status < 400) {
-      var responseJsonObj = JSON.parse(this.responseText);
-      //this.responseText es la respuesta de la api
-      console.log(responseJsonObj)
-      
-    }
-  };
-
-  xhttp.open("POST", Json, true);
-  xhttp.setRequestHeader("Accept", "application/json");
-  xhttp.setRequestHeader("Content-Type", "application/json");
-  xhttp.send(JSON.stringify(usuario));
-}) */
-
-// window.location.href = "../index.html";
