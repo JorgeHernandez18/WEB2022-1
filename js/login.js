@@ -1,14 +1,15 @@
 const Json = "https://ServidorTest.carlos-reneren7.repl.co/login";
 
-document.getElementById('sign').addEventListener("click", (e) => {
+document.getElementById("sign").addEventListener("click", (e) => {
+
   e.preventDefault();
 
-  let user = document.getElementById('nombre').value;
+  let username = document.getElementById('nombre').value;
   let pass = document.getElementById('password').value;
 
   let users = {
-    "user": user,
-    "password": pass
+    user: username,
+    password: pass
   }
 
   fetch(Json, {
@@ -22,14 +23,17 @@ document.getElementById('sign').addEventListener("click", (e) => {
     .then(res => res.json())
     //Respuesta del api
     .then(response => {
-      localStorage.setItem('user', response.user)
-      localStorage.setItem('name', response.name)
-      console.log("Succes", response)
+      console.log(response)
+
+      if (response.login === true) {
+        localStorage.setItem('user', response.user)
+        localStorage.setItem('name', response.name)
+        window.location.href = "../html/dashboard.html";
+      }
     })
     .catch(err => console.log(err))
-  
 })
 
-if(localStorage.getItem("user")){
-  window.location.href= "html/dashboard.html";
+if (localStorage.getItem("user")) {
+  window.location.href = "../html/dashboard.html";
 }

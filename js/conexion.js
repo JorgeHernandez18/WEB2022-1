@@ -1,12 +1,5 @@
 const Json = "https://ServidorTest.carlos-reneren7.repl.co/register";
 
-const xhttp = new XMLHttpRequest();
-
-/* xhttp.onload = function () {
-  document.getElementsByClassName("contenido").innerHTML = this.responseText;
-}
- */
-
 document.getElementById("btn-register").addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -30,8 +23,11 @@ document.getElementById("btn-register").addEventListener("click", (e) => {
     body: JSON.stringify(usuario)
   })
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => {
+      console.log(data)
+      if (data.error === false) {
+        window.location.href = "../index.html";
+      }
+    })
     .catch(err => console.log(err))
-  //window.location.href = "../index.html";
-
 })
